@@ -13,7 +13,6 @@ import se.lexicon.subscriptionapi.repository.OperatorRepository;
 import se.lexicon.subscriptionapi.service.OperatorService;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -54,6 +53,6 @@ public class OperatorServiceImpl implements OperatorService {
     public List<OperatorResponse> findAll() {
         return operatorRepository.findAll().stream()
                 .map(operatorMapper::toResponse)
-                .collect(Collectors.toList());
+                .toList();
     }
 }
